@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="admin-panel">
+        <h2>Admin Panel: Statistika O'zgartirish</h2>
+
+        <form id="statistics-form">
+            <label for="floor1-online">1-Qavat Online:</label>
+            <input type="number" id="floor1-online" name="floor1-online" value="2">
+
+            <label for="floor1-offline">1-Qavat Offline:</label>
+            <input type="number" id="floor1-offline" name="floor1-offline" value="2">
+
+            <label for="floor2-online">2-Qavat Online:</label>
+            <input type="number" id="floor2-online" name="floor2-online" value="2">
+
+            <label for="floor2-offline">2-Qavat Offline:</label>
+            <input type="number" id="floor2-offline" name="floor2-offline" value="2">
+
+            <label for="floor3-online">3-Qavat Online:</label>
+            <input type="number" id="floor3-online" name="floor3-online" value="2">
+
+            <label for="floor3-offline">3-Qavat Offline:</label>
+            <input type="number" id="floor3-offline" name="floor3-offline" value="2">
+
+            <label for="floor4-online">4-Qavat Online:</label>
+            <input type="number" id="floor4-online" name="floor4-online" value="2">
+
+            <label for="floor4-offline">4-Qavat Offline:</label>
+            <input type="number" id="floor4-offline" name="floor4-offline" value="2">
+
+            <button type="submit">Ma'lumotlarni Yangilash</button>
+        </form>
+
+        <div class="statistika">
+            <h3>Statistika</h3>
+            <table class="table">
+                <tr>
+                    <th>Qavat</th>
+                    <th>Online</th>
+                    <th>Offline</th>
+                    <th>Jami</th>
+                </tr>
+                <tr id="floor1">
+                    <td>1-Qavat</td>
+                    <td id="floor1-online-stat">2</td>
+                    <td id="floor1-offline-stat">2</td>
+                    <td id="floor1-total">4</td>
+                </tr>
+                <tr id="floor2">
+                    <td>2-Qavat</td>
+                    <td id="floor2-online-stat">2</td>
+                    <td id="floor2-offline-stat">2</td>
+                    <td id="floor2-total">4</td>
+                </tr>
+                <tr id="floor3">
+                    <td>3-Qavat</td>
+                    <td id="floor3-online-stat">2</td>
+                    <td id="floor3-offline-stat">2</td>
+                    <td id="floor3-total">4</td>
+                </tr>
+                <tr id="floor4">
+                    <td>4-Qavat</td>
+                    <td id="floor4-online-stat">2</td>
+                    <td id="floor4-offline-stat">2</td>
+                    <td id="floor4-total">4</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
