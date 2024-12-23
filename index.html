@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IT Park</title>
     <link rel="stylesheet" href="./style.css">
-    <!-- Leaflet.js CSS -->
-   
+    <link rel="icon" type="image/png" href="./alone-dark-typography-4k-fu.jpg">
 </head>
 <body>
-   
-
-
     <div class="navbar">
         <a href="index.html" class="logo">IT Park</a>
         <ul class="collaction">
             <a href="rahbaryat.html" class="item">Rahbaryat</a>
-            <!-- <a href="qr-code.html" class="item">QR-code</a> -->
         </ul>
     </div>
 
@@ -26,57 +21,25 @@
           <p>Innovative technology and business solutions</p>
         </div>
       </div>
-
-      <!-- <h2 class="logos">Statistika</h2>
-      <table class="table">
-        <tr>
-          <th>Qavat</th>
-          <th>Online</th>
-          <th>Offline</th>
-          <th>Jami</th>
-        </tr>
-        <tr>
-          <td>1-Qavat</td>
-          <td>2</td>
-          <td>2</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>2-Qavat</td>
-          <td>2</td>
-          <td>2</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>3-Qavat</td>
-          <td>2</td>
-          <td>2</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>4-Qavat</td>
-          <td>2</td>
-          <td>2</td>
-          <td>2</td>
-        </tr>
-      </table> -->
-
       <h2 class="logos">QR - code kiriting</h2>
       <div class="container">
         <form class="form" id="roomForm">
             <label class="label" for="name">Nomi:</label>
             <input class="input" type="text" id="name" name="name" required><br><br>
-
+    
             <label class="label" for="etaj">Etaj raqami:</label>
-            <input class="input" type="text" id="etaj" name="etaj"  required maxlength="1"  required oninput="validateNumberInput('etaj')"><br><br>
-
+            <input class="input" type="text" id="etaj" name="etaj" required maxlength="1" oninput="validateNumberInput('etaj')"><br><br>
+    
             <label class="label" for="xona">Xona raqami:</label>
-            <input class="input" type="text" id="xona" name="xona"  required maxlength="1"  required oninput="validateNumberInput('xona')"><br><br>
-
+            <input class="input" type="text" id="xona" name="xona" required maxlength="1" oninput="validateNumberInput('xona')"><br><br>
+    
             <button class="button" type="submit">Yuborish</button>
-          </form>
-           <a href="#"><button class="buttond">QR-code</button></a>
+        </form>
+        <a id="qrCodeLink" href="#" target="_blank">
+            <button class="buttond">QR-code</button>
+        </a>
     </div>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="./app.js"></script>
