@@ -563,6 +563,9 @@ input[type="file"] {
     padding: 0 20px;
   }
 }
+#web-content {
+  width: 100%;
+}
 @media screen  and (max-width: 460px) {
   .navbar{
     padding: 0 10px;
@@ -570,6 +573,9 @@ input[type="file"] {
   .qr-item {
     width: 100%;
     flex-direction: column;
+  }
+  #web-content{
+    width: 100%;
   }
 }
 @media screen and (max-width: 410px) {
@@ -599,5 +605,19 @@ input[type="file"] {
   }
   .admin-form-container{
     width: 90%;
+  }
+}
+@media screen and (max-width: 328px) {
+  .logo{
+    font-size: 18px;
+  }
+  .navbar{
+    padding:  0 2px;
+  }
+  .log_button{
+    margin-left: 5px;
+  }
+  .log_buttonn{
+    margin-left: 5px;
   }
 }
