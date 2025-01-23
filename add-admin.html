@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Park</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./photo_2024-12-26_16-36-24-removebg-preview.png">
+</head>
+<body>
+    <div class="navbar" id="admin-panel-container">
+        <a href="index.html" class="logo">IT Park</a>
+        <ul class="collaction">
+             <a href="./old_qrcode.html"><button class="log_button">QR-Codelar</button></a>
+             <a href="./add-admin.html"><button class="log_button" id="addUserBtn">Add User</button></a>
+            <button class="log_buttonn" id="logoutBtn">Log out</button>
+        </ul>
+    </div>
+
+    <div class="admin-form-container">
+        <h1>Admin Qo‘shish</h1>
+        <form class="admin-form" id="AdminForm">
+            <br>
+            <label for="firstName">Ism:</label>
+            <input type="text" id="firstName" name="firstName" required pattern="[A-Za-z]+" title="Ism faqat harflardan iborat bo‘lishi kerak">
+
+            <label for="lastName">Familya:</label>
+            <input type="text" id="lastName" name="lastName" required pattern="[A-Za-z]+" title="Familya faqat harflardan iborat bo‘lishi kerak">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Parol:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Admin Qo‘shish</button>
+        </form>
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <script src="./app.js"></script>
+    <script src="./admin.js"></script>
+</body>
+</html>

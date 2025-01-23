@@ -128,14 +128,14 @@ function validateNumberInput(inputId) {
   const inputField = document.getElementById(inputId);
   inputField.value = inputField.value.replace(/[^0-9]/g, '');
 }
-
+ 
 function validateSingleDigit(inputId) {
   const inputField = document.getElementById(inputId);
   inputField.value = inputField.value.replace(/[^0-9]/g, '').slice(0, 1);
 }
 
 document.getElementById('roomForm').addEventListener('submit', function(event) {
-
+  event.preventDefault();
   const name = document.getElementById('name').value;
   const etaj = parseInt(document.getElementById('etaj').value);
   const xona = document.getElementById('xona').value;
@@ -146,41 +146,46 @@ document.getElementById('roomForm').addEventListener('submit', function(event) {
       room: xona
   };
 
+  const token = localStorage.getItem('auth_token'); // LocalStorage-dan tokenni olish
+fetch('https://supposedly-bold-ocelot.ngrok-free.app/items', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}` // Authorizationni token bilan yuborish
+  },
+    body: JSON.stringify(formData)
+})
+.then(response => response.json())
+.then(data => {
+    alert('Ma\'lumot yuborildi!');
+    console.log('Success:', data);
 
-  fetch('172.18.0.1:8080/items', { 
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-  })
-  .then(response => response.json())
-  .then(data => {
-      alert('Ma\'lumot yuborildi!');
-      console.log('Success:', data);
-  })
-  .catch((error) => {
-      alert('Xato yuz berdi!');
-      console.error('Error:', error);
-  });
+    // qrcode_url ni olish va HTML'dagi a tagiga qo'yish
+    const qrcodeUrl = data.qrcode_url;
+    const aTag = document.getElementById('qrcodeLink'); // a tegini ID bo'yicha olish
+    aTag.href = qrcodeUrl; // a tegining href atributiga qrcode_url ni qo'yish
+})
+.catch((error) => {
+    alert('Xato yuz berdi!');
+    console.error('Error:', error);
 });
+})
 
 
-const apiUrl = "url"
-const qrCodeLink = document.getElementById("qrCodeLink");
-async function fetchQRCodeUrl() {
-    try {
-        const response = await fetch(apiUrl);
 
-        const data = await response.json();
+// URL'dan id ni olish
+const logoutBtn = document.getElementById('logoutBtn');
+document.addEventListener('DOMContentLoaded', () => {
+  // DOM elementlarini olish
+  const token = localStorage.getItem('auth_token');
+//   const logoutBtn = document.getElementById('logoutBtn'); // Bu yerda logoutBtn elementini olish
 
-        if (data && data.url) {
-            qrCodeLink.href = data.url;
-        } else {
-            console.error("Ma'lumot topilmadi.");
-        }
-    } catch (error) {
-        console.error("API'ga ulanishda xatolik:", error);
-    }
-}
-window.onload = fetchQRCodeUrl;
+  if (!token) {
+    // Agar token mavjud bo'lmasa, login sahifasiga yo'naltirish
+    window.location.href = 'login.html';
+  }
+  logoutBtn.addEventListener("click", ()=> {
+    localStorage.removeItem('auth_token')
+    window.location.href = 'login.html';
+  })
+});

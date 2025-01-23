@@ -5,24 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Park</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" type="image/png" href="./alone-dark-typography-4k-fu.jpg">
+    <link rel="icon" type="image/png" href="./photo_2024-12-26_16-36-24-removebg-preview.png">
 </head>
 <body>
-    <div class="navbar">
+    <div class="navbar" id="admin-panel-container">
         <a href="index.html" class="logo">IT Park</a>
         <ul class="collaction">
-            <a href="rahbaryat.html" class="item">Rahbaryat</a>
+             <a href="./old_qrcode.html"><button class="log_button">QR-Codelar</button></a>
+             <a href="./add-admin.html"><button class="log_button" id="addUserBtn">Add User</button></a>
+            <button class="log_buttonn" id="logoutBtn">Log out</button>
         </ul>
     </div>
+    
 
-      <div id="banner">
+    <div id="banner">
         <div id="web-content">
-          <h1>Welcome to IT Park Namangan</h1>
-          <p>Innovative technology and business solutions</p>
+            <h1>Welcome to IT Park Namangan</h1>
+            <p>Innovative technology and business solutions</p>
         </div>
-      </div>
-      <h2 class="logos">QR - code kiriting</h2>
-      <div class="container">
+    </div>
+    <h2 class="logos">QR - code kiriting</h2>
+    <div class="container">
         <form class="form" id="roomForm">
             <label class="label" for="name">Nomi:</label>
             <input class="input" type="text" id="name" name="name" required><br><br>
@@ -30,17 +33,17 @@
             <label class="label" for="etaj">Etaj raqami:</label>
             <input class="input" type="text" id="etaj" name="etaj" required maxlength="1" oninput="validateNumberInput('etaj')"><br><br>
     
-            <label class="label" for="xona">Xona raqami:</label>
-            <input class="input" type="text" id="xona" name="xona" required maxlength="1" oninput="validateNumberInput('xona')"><br><br>
+            <label class="label" for="xona">Tashkilot nomi:</label>
+            <input class="input" type="text" id="xona" name="xona" required><br><br>
     
             <button class="button" type="submit">Yuborish</button>
         </form>
-        <a id="qrCodeLink" href="#" target="_blank">
+        <a id="qrcodeLink" href="#" target="_blank">
             <button class="buttond">QR-code</button>
         </a>
     </div>
     
-
+    <script src="./script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="./app.js"></script>
 </body>
